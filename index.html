@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Calc 3D — Saiba quanto custa sua impressão 3D</title>
-<meta name="description" content="Calculadora de custo e preço para impressão 3D em resina e FDM. Material, energia, desgaste da máquina, taxa de falha, impostos e taxa do marketplace — e o preço que faz sua margem sobrar. Grátis para instalar.">
+<meta name="description" content="Calculadora de custo e preço para impressão 3D em resina e FDM. Material, energia, desgaste da máquina, taxa de falha, impostos e taxa do marketplace — e o preço que faz sua margem sobrar. Grátis para instalar no Android; o programa de Windows é liberado com o Pro.">
 <link rel="canonical" href="https://axiomcalculator3d.github.io/calc3d/">
 <meta name="theme-color" content="#05070E">
 
@@ -12,16 +12,16 @@
 <meta property="og:site_name" content="Calc 3D">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Calc 3D — Saiba quanto custa sua impressão 3D">
-<meta property="og:description" content="Calculadora de custo e preço para impressão 3D em resina e FDM. Material, energia, desgaste da máquina, taxa de falha, impostos e taxa do marketplace — e o preço que faz sua margem sobrar. Grátis para instalar.">
+<meta property="og:description" content="Calculadora de custo e preço para impressão 3D em resina e FDM. Material, energia, desgaste da máquina, taxa de falha, impostos e taxa do marketplace — e o preço que faz sua margem sobrar. Grátis para instalar no Android; o programa de Windows é liberado com o Pro.">
 <meta property="og:url" content="https://axiomcalculator3d.github.io/calc3d/">
 <meta property="og:image" content="https://axiomcalculator3d.github.io/calc3d/assets/compartilhar.png">
 <meta property="og:image:width" content="1024">
 <meta property="og:image:height" content="500">
-<meta property="og:image:alt" content="Calc 3D — sua calculadora completa para impressão 3D">
+<meta property="og:image:alt" content="Calc 3D — calculadora de custo e preço para impressão 3D">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Calc 3D — Saiba quanto custa sua impressão 3D">
-<meta name="twitter:description" content="Calculadora de custo e preço para impressão 3D em resina e FDM. Material, energia, desgaste da máquina, taxa de falha, impostos e taxa do marketplace — e o preço que faz sua margem sobrar. Grátis para instalar.">
+<meta name="twitter:description" content="Calculadora de custo e preço para impressão 3D em resina e FDM. Material, energia, desgaste da máquina, taxa de falha, impostos e taxa do marketplace — e o preço que faz sua margem sobrar. Grátis para instalar no Android; o programa de Windows é liberado com o Pro.">
 <meta name="twitter:image" content="https://axiomcalculator3d.github.io/calc3d/assets/compartilhar.png">
 
 <link rel="icon" type="image/png" sizes="512x512" href="assets/icone-512.png">
@@ -32,11 +32,13 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Calc 3D",
-  "operatingSystem": "Android",
+  "operatingSystem": "Android, Windows",
   "applicationCategory": "BusinessApplication",
-  "description": "Calculadora de custo e preço para impressão 3D em resina e FDM. Material, energia, desgaste da máquina, taxa de falha, impostos e taxa do marketplace — e o preço que faz sua margem sobrar. Grátis para instalar.",
+  "description": "Calculadora de custo e preço para impressão 3D em resina e FDM. Material, energia, desgaste da máquina, taxa de falha, impostos e taxa do marketplace — e o preço que faz sua margem sobrar. Grátis para instalar. Programa para Windows para quem comprou o Pro.",
   "url": "https://axiomcalculator3d.github.io/calc3d/",
   "installUrl": "https://play.google.com/store/apps/details?id=com.calc3d.nativeapp",
+  "downloadUrl": "https://github.com/axiomcalculator3d/calc3d/releases/latest/download/Calc3D-Setup.exe",
+  "softwareVersion": "3.0.1",
   "inLanguage": [
     "pt-BR",
     "en",
@@ -177,6 +179,7 @@
   }
   nav.links a:hover { color: var(--text); }
   @media (max-width: 940px) { nav.links { display: none; } .topbar { gap: 16px; } .brand { margin-right: auto; } }
+  @media (max-width: 560px) { .nav-play { display: none; } }
 
   /* ===== Botões ===== */
   .btn {
@@ -233,6 +236,7 @@
   .hero h1 { font-size: clamp(38px, 5.6vw, 62px); max-width: 15ch; }
   .hero .sub { font-size: clamp(17px, 2vw, 20px); max-width: 50ch; }
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+  .hero-actions .btn-lg { padding-left: 26px; padding-right: 26px; }
 
   /* Cartões de resultado */
   .results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 40px; }
@@ -260,6 +264,60 @@
     background: var(--violet); flex: none;
   }
 
+  /* ===== Vitrine do herói ===== */
+  .hero-show { position: relative; min-height: 552px; }
+  .hero-show::before {
+    content: ""; position: absolute; inset: 10% -4% 0 2%; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(122,92,255,.34), transparent 72%);
+    filter: blur(46px); z-index: 0;
+  }
+  .hero-window {
+    position: absolute; top: 16px; right: -3%; width: 100%; z-index: 1;
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,.16);
+    background: #0A0E1A;
+    box-shadow: 0 60px 100px -28px rgba(0,0,0,.92), inset 0 1px 0 rgba(255,255,255,.1);
+    transform: rotate(-1.4deg);
+  }
+  .hero-window img { width: 100%; height: auto; display: block; }
+  .hero-phone {
+    position: absolute; left: -1%; bottom: 2px; width: 194px; z-index: 2;
+    border-radius: 32px; padding: 7px;
+    background: linear-gradient(165deg, #26324B 0%, #080C17 62%);
+    border: 1px solid rgba(255,255,255,.2);
+    box-shadow: 0 50px 80px -20px rgba(0,0,0,.95), inset 0 1px 0 rgba(255,255,255,.16);
+    transform: rotate(2.6deg);
+  }
+  .hero-phone img { width: 100%; height: auto; display: block; border-radius: 26px; }
+  .tag-hero {
+    position: absolute; z-index: 3; display: flex; align-items: center; gap: 8px;
+    padding: 9px 13px; border-radius: 11px; white-space: nowrap;
+    background: rgba(9,14,27,.88); border: 1px solid rgba(255,255,255,.16);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    box-shadow: 0 18px 36px -12px rgba(0,0,0,.8);
+    font-family: "JetBrains Mono", monospace; font-size: 10.5px; font-weight: 700;
+    letter-spacing: .1em;
+  }
+  .tag-hero .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+  .tag-topo { top: -12px; right: 5%; }
+  .tag-base { bottom: 34px; right: -2%; }
+  @media (max-width: 1120px) {
+    .hero-show { min-height: 500px; }
+    .hero-phone { width: 172px; }
+  }
+  @media (max-width: 980px) {
+    .hero-show { min-height: 0; display: flex; justify-content: center; padding-bottom: 40px; }
+    .hero-window { position: relative; top: 0; right: auto; width: min(560px, 94%); }
+    .hero-phone { width: 148px; left: 1%; bottom: 0; }
+    .tag-topo { top: -14px; right: 5%; }
+    .tag-base { bottom: 6px; right: 1%; }
+  }
+  @media (max-width: 560px) {
+    .hero-phone { width: 114px; }
+    .tag-hero { font-size: 9.5px; padding: 7px 10px; }
+    .tag-base { display: none; }
+  }
+
   /* ===== Telefone ===== */
   .phone-stage { position: relative; display: flex; justify-content: center; }
   .phone-stage.coluna { flex-direction: column; align-items: center; }
@@ -280,25 +338,6 @@
     box-shadow: 0 50px 90px -24px rgba(0,0,0,.85), inset 0 1px 0 rgba(255,255,255,.14);
   }
   .phone img { width: 100%; height: auto; display: block; border-radius: 32px; }
-
-  .chip {
-    position: absolute; z-index: 2; display: flex; align-items: center; gap: 8px;
-    padding: 10px 14px; border-radius: 12px; white-space: nowrap;
-    background: rgba(11, 16, 30, .82); border: 1px solid var(--line-2);
-    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
-    box-shadow: 0 14px 34px -10px rgba(0,0,0,.7);
-    font-size: 13px; font-weight: 600;
-    animation: flutua 5.5s ease-in-out infinite;
-  }
-  .chip .lbl { font-family: "JetBrains Mono", monospace; font-size: 10.5px; color: var(--muted); font-weight: 700; letter-spacing: .1em; }
-  .chip .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
-  .chip-1 { top: 8%;  left: -6%;  animation-delay: 0s; }
-  .chip-2 { top: 30%; right: -9%; animation-delay: -1.4s; }
-  .chip-3 { bottom: 26%; left: -9%; animation-delay: -2.8s; }
-  .chip-4 { bottom: 7%; right: -5%; animation-delay: -4.1s; }
-  @keyframes flutua { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
-  @media (max-width: 1100px) { .chip-1, .chip-3 { left: -2%; } .chip-2, .chip-4 { right: -2%; } }
-  @media (max-width: 560px) { .chip-2, .chip-3 { display: none; } .chip-1 { left: 0; } .chip-4 { right: 0; } }
 
   /* ===== Grades genéricas ===== */
   .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
@@ -419,18 +458,6 @@
   .stat .big { font-family: Sora, sans-serif; font-weight: 800; font-size: clamp(30px, 4vw, 44px); letter-spacing: -.04em; }
   .stat .lbl { font-size: 14px; color: var(--muted); margin-top: 8px; }
 
-  /* ===== Depoimentos ===== */
-  .depo { border-style: dashed; }
-  .depo .quote { font-size: 15.5px; color: var(--muted); font-style: italic; margin: 0 0 20px; }
-  .depo .who { display: flex; align-items: center; gap: 13px; }
-  .depo .av { width: 42px; height: 42px; border-radius: 50%; background: var(--surface-2); border: 1px dashed var(--line-2); flex: none; }
-  .depo .nome { font-weight: 600; font-size: 14.5px; }
-  .depo .cargo { font-size: 13px; color: var(--muted); }
-  .aviso {
-    margin-top: 26px; padding: 15px 18px; border-radius: 12px; font-size: 13.5px;
-    color: var(--muted); background: rgba(251,113,133,.07); border: 1px solid rgba(251,113,133,.22);
-  }
-
   /* ===== Preço ===== */
   .price-wrap { display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: center; margin-top: 50px; }
   @media (max-width: 900px) { .price-wrap { grid-template-columns: 1fr; } }
@@ -490,6 +517,32 @@
   .final .hero-actions { justify-content: flex-start; }
   @media (max-width: 880px) { .final .hero-actions { justify-content: center; } }
 
+  /* ===== Programa para Windows ===== */
+  .dl-card {
+    border-radius: 24px; padding: 30px 28px;
+    background: linear-gradient(165deg, rgba(122,92,255,.15), rgba(59,116,255,.05));
+    border: 1px solid rgba(122,92,255,.38);
+    box-shadow: 0 40px 90px -30px rgba(59,116,255,.45);
+  }
+  .dl-topo { display: flex; align-items: center; gap: 16px; }
+  .dl-topo .marca {
+    width: 56px; height: 56px; flex: none;
+    background-size: 90% auto;
+    background-color: rgba(255,255,255,.07);
+    border: 1px solid var(--line-2); border-radius: 14px;
+    filter: brightness(1.18) saturate(1.1);
+  }
+  .dl-topo b { font-family: Sora, sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -.02em; display: block; }
+  .dl-topo span { display: block; font-size: 13.5px; color: var(--muted); margin-top: 3px; }
+  .dl-requisitos { list-style: none; margin: 24px 0 22px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; }
+  @media (max-width: 480px) { .dl-requisitos { grid-template-columns: 1fr; } }
+  .dl-requisitos li { display: flex; gap: 9px; font-size: 13.5px; color: var(--muted); align-items: flex-start; }
+  .dl-requisitos svg { width: 17px; height: 17px; color: var(--green); flex: none; margin-top: 2px; }
+  .dl-card .btn { width: 100%; }
+  .dl-nota { margin: 14px 0 0; font-size: 13px; color: var(--muted); text-align: center; }
+  .dl-nota a { color: var(--cyan); text-decoration: none; }
+  .dl-nota a:hover { text-decoration: underline; }
+
   /* ===== Rodapé ===== */
   footer.pe { border-top: 1px solid var(--line); padding: 54px 0 40px; position: relative; z-index: 1; }
   .pe-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 44px; }
@@ -516,13 +569,14 @@
       <span>Calc 3D</span>
     </a>
     <nav class="links">
-      <a href="#inicio">Início</a>
       <a href="#recursos">Recursos</a>
       <a href="#como">Como funciona</a>
+      <a href="#windows">Windows</a>
       <a href="#beneficios">Benefícios</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-primary btn-sm" href="#preco">Começar agora</a>
+    <a class="btn btn-ghost btn-sm nav-play" href="https://play.google.com/store/apps/details?id=com.calc3d.nativeapp">Google Play</a>
+    <a class="btn btn-primary btn-sm" href="#windows">Baixar para Windows</a>
   </div>
 </header>
 
@@ -540,10 +594,10 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="#preco">Começar a calcular</a>
-          <a class="btn btn-ghost btn-lg" href="#como">Ver como funciona</a>
+          <a class="btn btn-primary btn-lg" href="#windows">Baixar para Windows</a>
+          <a class="btn btn-ghost btn-lg" href="https://play.google.com/store/apps/details?id=com.calc3d.nativeapp">Disponível na Google Play</a>
         </div>
-        <p class="micro"><b>Grátis para instalar.</b> A calculadora completa não expira.</p>
+        <p class="micro"><b>Grátis para instalar.</b> O Pro é comprado na Google Play e libera o celular e o Windows.</p>
 
         <div class="results">
           <div class="res">
@@ -569,14 +623,15 @@
         </p>
       </div>
 
-      <div class="phone-stage">
-        <div class="phone">
-          <img src="assets/tela-resultado.png" width="1080" height="2400" decoding="async" fetchpriority="high" alt="Tela do Calc 3D mostrando preço de comércio de R$ 34,83, lucro de R$ 9,95 e a composição de custo separada em material, energia elétrica, desgaste da máquina e seguro contra risco">
+      <div class="hero-show">
+        <div class="hero-window">
+          <img src="assets/windows-calculadora.png" width="1440" height="900" decoding="async" fetchpriority="high" alt="Programa Calc 3D para Windows em tema escuro, com o preço de varejo de R$ 49,76, o preço de comércio de R$ 34,83 e a composição de custo">
         </div>
-        <div class="chip chip-1"><span class="dot" style="background:#3B74FF"></span><span><span class="lbl">PEÇA</span> 120 g · resina</span></div>
-        <div class="chip chip-2"><span class="dot" style="background:#F59E0B"></span><span><span class="lbl">TEMPO</span> 5 h 00 min</span></div>
-        <div class="chip chip-3"><span class="dot" style="background:#34D399"></span><span><span class="lbl">LUCRO</span> R$ 9,95</span></div>
-        <div class="chip chip-4"><span class="dot" style="background:#34D8F0"></span><span><span class="lbl">MARGEM</span> 28,6%</span></div>
+        <div class="hero-phone">
+          <img src="assets/tela-calculadora-escuro.png" width="1080" height="2400" decoding="async" fetchpriority="high" alt="Aplicativo Calc 3D no celular em tema escuro, com a calculadora preenchida e o preço de comércio de R$ 34,83 com lucro de R$ 9,95">
+        </div>
+        <div class="tag-hero tag-topo"><span class="dot" style="background:#34D399"></span>ANDROID + WINDOWS</div>
+        <div class="tag-hero tag-base"><span class="dot" style="background:#34D8F0"></span>LUCRO R$ 9,95</div>
       </div>
     </div>
   </section>
@@ -654,8 +709,8 @@
         </div>
 
         <div class="shots rv">
-          <div class="shot"><img src="assets/tela-calculo.png" width="1080" height="2400" loading="lazy" decoding="async" alt="Tela de entrada do Calc 3D com nome do projeto, escolha entre resina e FDM, peso, tempo de impressão, perfil da impressora e material"></div>
-          <div class="shot"><img src="assets/tela-margem.png" width="1080" height="2400" loading="lazy" decoding="async" alt="Tela do Calc 3D com canal de venda, impostos, taxa de falha e markup de varejo"></div>
+          <div class="shot"><img src="assets/tela-projeto-escuro.png" width="1080" height="2400" loading="lazy" decoding="async" alt="Tela de entrada do Calc 3D com nome do projeto, escolha entre resina e FDM, peso e tempo de impressão por peça"></div>
+          <div class="shot"><img src="assets/tela-parametros-escuro.png" width="1080" height="2400" loading="lazy" decoding="async" alt="Tela do Calc 3D com perfil da impressora, material, custo de energia, taxas do canal de venda e preço de varejo"></div>
         </div>
       </div>
     </div>
@@ -825,15 +880,89 @@
       <div>
         <h3 class="rv" style="font-size:26px">E termina em um documento que o cliente entende.</h3>
         <p class="sub rv" style="font-size:16.5px">
-          Do resultado do cálculo você exporta um orçamento em PDF com a sua logo
-          e a cor da sua marca, ou manda direto pelo WhatsApp. Quatorze blocos do
-          documento ligam e desligam — você mostra só o que quiser mostrar.
+          Do resultado do cálculo você exporta um orçamento em PDF com a sua logo,
+          ou manda direto pelo WhatsApp. No editor de modelos, arraste e redimensione
+          cada bloco, escolha cores livres e aplique uma marca d'água com a sua
+          imagem — geral ou só naquele modelo.
         </p>
         <p class="sub rv" style="font-size:16.5px">
           <b style="color:var(--text)">Seu custo, sua margem e seu lucro nunca entram no documento.</b>
           Esses valores não chegam a ser enviados ao gerador do PDF, então não há
           como aparecerem por engano.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WINDOWS ============ -->
+  <section id="windows">
+    <div class="wrap center">
+      <p class="eyebrow rv">Programa para Windows</p>
+      <h2 class="rv">O mesmo negócio, agora na tela grande.</h2>
+      <p class="sub rv">
+        Editor do modelo do orçamento, marca d'água, leitura dos arquivos do
+        fatiador e sincronização com o celular. Quem comprou o Pro usa os dois.
+      </p>
+    </div>
+
+    <div class="wrap split" style="margin-top:56px">
+      <div class="rv">
+        <div class="dl-card">
+          <div class="dl-topo">
+            <span class="marca" role="img" aria-label="Logotipo do Calc 3D"></span>
+            <div>
+              <b>Calc 3D para Windows</b>
+              <span>Versão 3.0.1 · Windows 10 e 11 (64 bits) · 110 MB</span>
+            </div>
+          </div>
+
+          <ul class="dl-requisitos">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>Windows 10 ou 11, 64 bits</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>4 GB de memória e 500 MB livres</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>Java já vem incluído no instalador</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>Requer o Pro comprado na Google Play</li>
+          </ul>
+
+          <a class="btn btn-primary btn-lg" href="https://github.com/axiomcalculator3d/calc3d/releases/latest/download/Calc3D-Setup.exe">Baixar o instalador</a>
+          <p class="dl-nota">
+            Instalador com os termos de uso e escolha da pasta ·
+            <a href="licenca.html">Licença do programa</a>
+          </p>
+        </div>
+
+        <p class="aviso rv" style="margin-top:22px">
+          <b style="color:var(--text)">O Windows pode avisar que o aplicativo não é reconhecido.</b>
+          É porque o instalador ainda não tem certificado de assinatura. Clique em
+          “Mais informações” e depois em “Executar assim mesmo”. O código-fonte e o
+          instalador ficam no mesmo repositório público.
+        </p>
+      </div>
+
+      <div class="rv">
+        <div class="shot">
+          <img src="assets/windows-editor.png" width="1440" height="900" decoding="async" alt="Editor de modelo do orçamento no programa de Windows, com a folha A4 à esquerda e os blocos, cores e marca d'água à direita">
+        </div>
+        <div class="shot" style="margin-top:18px">
+          <img src="assets/windows-vendas.png" width="1440" height="900" loading="lazy" decoding="async" alt="Painel de vendas do programa de Windows em tema escuro, com faturamento, lucro e os últimos orçamentos vendidos">
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap steps" style="margin-top:70px">
+      <div class="step rv">
+        <div class="bolha">01</div>
+        <h3>Baixe o instalador</h3>
+        <p>Um arquivo só, com o programa e o Java que ele usa. Não precisa instalar mais nada antes.</p>
+      </div>
+      <div class="step rv">
+        <div class="bolha">02</div>
+        <h3>Aceite e escolha a pasta</h3>
+        <p>O instalador mostra a licença de uso e a pasta de destino. Você decide onde instalar.</p>
+      </div>
+      <div class="step rv">
+        <div class="bolha">03</div>
+        <h3>Entre com a sua conta</h3>
+        <p>A mesma conta que comprou o Pro na Google Play libera o programa. Sem compra, ele não abre.</p>
       </div>
     </div>
   </section>
@@ -852,43 +981,6 @@
     </div>
   </section>
 
-  <!-- ============ DEPOIMENTOS ============ -->
-  <section>
-    <div class="wrap center">
-      <p class="eyebrow rv">Depoimentos</p>
-      <h2 class="rv">O que dizem quem usa</h2>
-    </div>
-    <!-- ===================================================================
-         DEPOIMENTOS — TROCAR AQUI
-         Em cada um dos três cartões abaixo, substitua:
-           "[Depoimento de cliente]"  pelo texto do depoimento
-           "[Nome do usuário]"        pelo nome de quem escreveu
-           "[Profissão / negócio]"    pela ocupação ou nome da loja
-         Peça autorização antes de publicar o nome de alguém.
-         =================================================================== -->
-    <div class="wrap g3">
-      <div class="card depo rv">
-        <p class="quote">"[Depoimento de cliente]"</p>
-        <div class="who"><span class="av"></span><span><span class="nome">[Nome do usuário]</span><br><span class="cargo">[Profissão / negócio]</span></span></div>
-      </div>
-      <div class="card depo rv">
-        <p class="quote">"[Depoimento de cliente]"</p>
-        <div class="who"><span class="av"></span><span><span class="nome">[Nome do usuário]</span><br><span class="cargo">[Profissão / negócio]</span></span></div>
-      </div>
-      <div class="card depo rv">
-        <p class="quote">"[Depoimento de cliente]"</p>
-        <div class="who"><span class="av"></span><span><span class="nome">[Nome do usuário]</span><br><span class="cargo">[Profissão / negócio]</span></span></div>
-      </div>
-    </div>
-    <div class="wrap">
-      <p class="aviso rv">
-        Espaço reservado. Nada aqui foi inventado: troque pelos depoimentos reais
-        dos seus usuários antes de divulgar a página, ou remova a seção inteira
-        enquanto não tiver nenhum.
-      </p>
-    </div>
-  </section>
-
   <!-- ============ PREÇO ============ -->
   <section id="preco">
     <div class="wrap price-wrap">
@@ -898,10 +990,11 @@
         <p class="sub rv">
           A calculadora completa é gratuita, não pede cartão e não vira demonstração
           depois de uma semana. O Pro libera o negócio inteiro dentro do aplicativo,
-          sem limite de quantidade.
+          sem limite de quantidade — e libera também o programa de Windows.
         </p>
         <p class="sub rv" style="font-size:16px">
-          <b style="color:var(--text)">Tenha mais controle sobre cada impressão.</b>
+          <b style="color:var(--text)">Uma compra, os dois programas.</b> A compra é
+          feita na Google Play; no Windows você entra com a mesma conta.
         </p>
       </div>
 
@@ -917,6 +1010,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>Painel de vendas, despesas e lucro líquido</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>Pedidos por etapa, agenda e histórico ilimitado</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>Backup automático no seu Google Drive</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>Programa de Windows incluído, sem pagar de novo</li>
         </ul>
         <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.calc3d.nativeapp">Começar agora</a>
         <p class="micro" style="text-align:center">Calcule antes de vender.</p>
@@ -931,6 +1025,11 @@
       <h2 class="rv">Antes de instalar</h2>
     </div>
     <div class="wrap faq">
+      <details class="rv"><summary>O programa de Windows é grátis?</summary><p>Ele é liberado para quem comprou o Pro na Google Play. A compra é feita só na Play Store e vale para os dois: no computador você entra com a mesma conta.</p></details>
+      <details class="rv"><summary>Preciso instalar o Java?</summary><p>Não. O instalador já traz o ambiente Java que o programa usa, e ele abre pelo atalho do menu Iniciar.</p></details>
+      <details class="rv"><summary>Posso escolher onde o programa fica instalado?</summary><p>Sim. O instalador mostra a licença de uso e deixa você escolher a pasta de destino antes de copiar os arquivos.</p></details>
+      <details class="rv"><summary>O Windows avisa que o aplicativo não é reconhecido. É vírus?</summary><p>Não. O instalador ainda não tem certificado de assinatura digital, e o Windows avisa por isso. Clique em “Mais informações” e depois em “Executar assim mesmo”. O instalador e o código ficam no mesmo repositório público.</p></details>
+      <details class="rv"><summary>Meus dados do celular aparecem no Windows?</summary><p>Sim, com a sincronização ligada nos dois aparelhos: impressoras, materiais, histórico, vendas e modelos de orçamento.</p></details>
       <details class="rv"><summary>Como o custo da impressão é calculado?</summary><p>Material, energia, desgaste da máquina e reserva para falhas, somados e mostrados linha a linha. Custos extras e taxas entram depois, no preço.</p></details>
       <details class="rv"><summary>Posso cadastrar diferentes impressoras?</summary><p>Sim, com potência, valor pago e vida útil de cada uma. O plano gratuito traz duas de fábrica, editáveis; no Pro são ilimitadas.</p></details>
       <details class="rv"><summary>Posso calcular PLA, PETG e ABS?</summary><p>Sim, e qualquer outro filamento ou resina. Você cadastra nome, preço por quilo ou litro, marca e cor.</p></details>
@@ -952,15 +1051,16 @@
           <h2>Quanto sua próxima impressão realmente vai custar?</h2>
           <p class="lead">Pare de estimar. Calcule.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary btn-lg" href="https://play.google.com/store/apps/details?id=com.calc3d.nativeapp">COMEÇAR AGORA</a>
+            <a class="btn btn-primary btn-lg" href="#windows">BAIXAR PARA WINDOWS</a>
+            <a class="btn btn-ghost btn-lg" href="https://play.google.com/store/apps/details?id=com.calc3d.nativeapp">GOOGLE PLAY</a>
           </div>
-          <p class="micro">Grátis para instalar · Disponível na Google Play</p>
+          <p class="micro">Android e Windows · O Pro é comprado na Google Play</p>
         </div>
         <div class="phone-stage coluna">
           <div class="phone" style="width:min(230px,64vw)">
-            <img src="assets/tela-resultado.png" width="1080" height="2400" loading="lazy" decoding="async" alt="Tela de resultado do Calc 3D com preço, lucro e composição de custo">
+            <img src="assets/tela-calculadora-escuro.png" width="1080" height="2400" loading="lazy" decoding="async" alt="Calc 3D no celular em tema escuro, com a calculadora preenchida e o preço de comércio de R$ 34,83">
           </div>
-          <p class="legenda">Tela de resultado do Calc 3D com preço, lucro e composição de custo.</p>
+          <p class="legenda">Calc 3D no celular, com a calculadora e o preço já calculado.</p>
         </div>
       </div>
     </div>
@@ -978,7 +1078,7 @@
         </a>
         <p>
           Calculadora de custo e preço para impressão 3D em resina e FDM, feita
-          para quem vende o que imprime. Android, seis idiomas.
+          para quem vende o que imprime. Android e Windows, seis idiomas.
         </p>
       </div>
       <div>
@@ -987,6 +1087,7 @@
           <li><a href="#inicio">Início</a></li>
           <li><a href="#recursos">Recursos</a></li>
           <li><a href="#como">Como funciona</a></li>
+          <li><a href="#windows">Windows</a></li>
           <li><a href="#beneficios">Benefícios</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
@@ -994,10 +1095,11 @@
       <div>
         <h4>Legal e suporte</h4>
         <ul>
+          <li><a href="licenca.html">Licença do programa</a></li>
           <li><a href="https://axiomcalculator3d.github.io/calc3d-legal/terms_of_service_pt.html">Termos de uso</a></li>
           <li><a href="https://axiomcalculator3d.github.io/calc3d-legal/privacy_policy_pt.html">Política de privacidade</a></li>
+          <li><a href="https://github.com/axiomcalculator3d/calc3d/releases">Notas da versão</a></li>
           <li><a href="https://play.google.com/store/apps/details?id=com.calc3d.nativeapp">Suporte</a></li>
-          <li><a href="https://play.google.com/store/apps/details?id=com.calc3d.nativeapp">Google Play</a></li>
         </ul>
       </div>
     </div>
